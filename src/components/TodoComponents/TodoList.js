@@ -2,10 +2,11 @@
 // feel free to change this component.js into TodoList.js
 import React from "react";
 import Todo from "./Todos";
+import "./Todo.css";
 
 const TodoList = props => {
   return (
-    <div>
+    <div className="todo-list">
       {props.todos.map(todo => (
         <Todo
           handleToggleComplete={props.handleToggleComplete}
