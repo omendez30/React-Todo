@@ -71,7 +71,6 @@ class App extends React.Component {
     let todos = this.state.todos.filter(todo => !todo.completed);
     this.setState({ todos });
   };
-
   render() {
     return (
       <div>
