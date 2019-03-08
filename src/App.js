@@ -43,8 +43,8 @@ class App extends React.Component {
     };
   }
 
-  addTodo = e => {
-    e.preventDefault();
+  add = event => {
+    event.preventDefault();
     const newTodo = { task: this.state.todo, completed: false, id: Date.now() };
     this.setState({
       todos: [...this.state.todos, newTodo],
@@ -52,9 +52,9 @@ class App extends React.Component {
     });
   };
 
-  changeTodo = e => this.setState({ [e.target.name]: e.target.value });
+  change = e => this.setState({ [e.target.name]: e.target.value });
 
-  toggleTodoComplete = id => {
+  toggleCompleteTodo = id => {
     let todos = this.state.todos.slice();
     todos = todos.map(todo => {
       if (todo.id === id) {
@@ -67,8 +67,8 @@ class App extends React.Component {
     this.setState({ todos });
   };
 
-  clearCompletedTodos = e => {
-    e.preventDefault();
+  clearCompleted = event => {
+    event.preventDefault();
     let todos = this.state.todos.filter(todo => !todo.completed);
     this.setState({ todos });
   };
@@ -77,14 +77,14 @@ class App extends React.Component {
       <div className="app">
         <h1>ToDo List:</h1>
         <TodoList
-          handleToggleComplete={this.toggleTodoComplete}
+          handleToggleComplete={this.toggleCompleteTodo}
           todos={this.state.todos}
         />
         <TodoForm
           value={this.state.todo}
-          handleTodoChange={this.changeTodo}
-          handleAddTodo={this.addTodo}
-          handleClearTodos={this.clearCompletedTodos}
+          handleTodoChange={this.change}
+          handleAddTodo={this.add}
+          handleClearTodos={this.clearCompleted}
         />
       </div>
     );
