@@ -3,9 +3,16 @@
   flex-direction: column;
   align-items: center;
 }
-#todo {
+.todo {
   margin-bottom: 10px;
   border: 1px solid #fff;
+  width: 95%;
+  text-align: center;
+  padding: 10px;
+}
+.todo:hover {
+  background: #2e4d9a;
+  color: #fff;
 }
 
 form {
@@ -23,12 +30,6 @@ input {
   padding: 10px;
   border-radius: 10px;
 }
-.add-clear {
-  display: flex;
-  flex-direction: row;
-  margin: 10px 0;
-  width: 45%;
-}
 button {
   display: flex;
   padding: 10px;
@@ -37,8 +38,21 @@ button {
   background: #163584;
   border: #163584;
   color: #a5a9b3;
+  align-content: center;
 }
 button:hover {
   background: #2e4d9a;
   color: #fff;
+}
+
+.add-clear {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+  width: 60%;
+}
+.add-btn {
+  display: flex;
+  align-content: space-between;
+  border: 1px solid green;
 }
